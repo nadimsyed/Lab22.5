@@ -36,7 +36,12 @@ namespace Lab22._5.Controllers
 
         public ActionResult Welcome()
         {
+            return View();
+        }
 
+        public ActionResult LogOut()
+        {
+            Session.Clear();
             return View();
         }
     }
