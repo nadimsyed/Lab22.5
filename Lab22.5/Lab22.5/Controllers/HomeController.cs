@@ -34,9 +34,8 @@ namespace Lab22._5.Controllers
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult Welcome()
         {
-            ViewBag.Message = "Your contact page.";
 
             return View();
         }
