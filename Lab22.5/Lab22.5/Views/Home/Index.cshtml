@@ -22,9 +22,10 @@
             Favorite Food: <input type="text" id="fave" maxlength="32" class="form-control" name="FavoriteFood" pattern="[A-Za-z]{1,32}" /><br />
         </fieldset>
         <input id="submit" type="submit" onclick="return true;" value="Submit Registration!" /><br />
+
+    </form>
 </body>
 
-</form>
 <script>
     function NameCheck() {
         if (Session["UserName"] !== null) {
