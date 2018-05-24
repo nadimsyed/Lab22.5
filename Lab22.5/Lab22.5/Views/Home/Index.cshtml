@@ -2,21 +2,50 @@
     ViewBag.Title = "Home Page";
 }
 
-<form action="/Home/LogIn" method="post">
-    <br />
+<body onload="NameCheck() && ColorCheck() && FoodCheck()">
 
-    <fieldset class="form-group">
-        User Name: <input type="text" class="form-control" maxlength="32" name="UserName" pattern="[A-Za-z]{1,32}" /><br />
-        
-        Choose a Color:
-        <select id="security" name="Color" class="form-control">
-            <option value="green">Green</option>
-            <option value="lightblue">Lightblue</option>
-            <option value="yellow">Yellow</option>
-            <option value="firebrick">Firebrick</option>
-        </select><br />
-        @*string security = document.getElementById("security").value;*@
+    <form action="/Home/LogIn" method="post">
+        <br />
 
-        Favorite Food: <input type="text" maxlength="32" class="form-control" name="FavoriteFood" pattern="[A-Za-z]{1,32}" /><br />
-    </fieldset>
-    <input id="submit" type="submit" onclick="return true;" value="Submit Registration!" /><br />
+        <fieldset class="form-group">
+            User Name: <input type="text" id="name" class="form-control" maxlength="32" name="UserName" pattern="[A-Za-z]{1,32}" /><br />
+
+            Choose a Color:
+            <select id="colorChosen" name="Color" class="form-control">
+                <option value="green">Green</option>
+                <option value="lightblue">Lightblue</option>
+                <option value="yellow">Yellow</option>
+                <option value="firebrick">Firebrick</option>
+            </select><br />
+            @*string security = document.getElementById("security").value;*@
+
+            Favorite Food: <input type="text" id="fave" maxlength="32" class="form-control" name="FavoriteFood" pattern="[A-Za-z]{1,32}" /><br />
+        </fieldset>
+        <input id="submit" type="submit" onclick="return true;" value="Submit Registration!" /><br />
+</body>
+
+</form>
+<script>
+    function NameCheck() {
+        if (Session["UserName"] !== null) {
+            document.getElementById("name").value = Session["UserName"];
+
+        }
+    }
+</script>
+<script>
+    function ColorCheck() {
+        if (Session["Color"] !== null) {
+            document.getElementById("colorChosen").value = Session["Color"];
+
+        }
+    }
+</script>
+<script>
+    function FoodCheck() {
+        if (Session["FavoriteFood"] !== null) {
+            document.getElementById("fave").value = Session["FavoriteFood"];
+
+        }
+    }
+</script>
