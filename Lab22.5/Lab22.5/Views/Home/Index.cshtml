@@ -2,9 +2,9 @@
     ViewBag.Title = "Home Page";
 }
 
-<body onload="NameCheck() && ColorCheck() && FoodCheck()">
+<body>
 
-    <form action="/Home/LogIn" method="post">
+    <form action="/Home/LogIn" method="post" onload="NameCheck() && ColorCheck() && FoodCheck()">
         <br />
 
         <fieldset class="form-group">
