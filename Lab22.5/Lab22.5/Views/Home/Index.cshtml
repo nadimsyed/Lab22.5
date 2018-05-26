@@ -10,9 +10,10 @@
         <br />
 
         <fieldset class="form-group">
-            User Name: <input type="text" id="name" class="form-control" maxlength="32" name="UserName" pattern="[A-Za-z]{1,32}" /><br />
+            User Name:  <input type="text" id="name" class="form-control" maxlength="32" name="UserName" pattern="[A-Za-z]{1,32}" /><br />
 
             Choose a Color:
+
             <select id="colorChosen" name="Color" class="form-control">
                 <option value="green">Green</option>
                 <option value="lightblue">Lightblue</option>
@@ -21,7 +22,7 @@
             </select><br />
             @*string security = document.getElementById("security").value;*@
 
-            Favorite Food: <input type="text" id="fave" maxlength="32" class="form-control" name="FavoriteFood" pattern="[A-Za-z]{1,32}" /><br />
+            Favorite Food:  <input type="text" id="fave" maxlength="32" class="form-control" name="FavoriteFood" pattern="[A-Za-z]{1,32}" /><br />
         </fieldset>
         <input id="submit" type="submit" onclick="return true;" value="Submit Registration!" /><br />
 
@@ -70,6 +71,5 @@
 <style>
     body{
         background-color: @Session["Color"];
-        color: white;
     }
 </style>
