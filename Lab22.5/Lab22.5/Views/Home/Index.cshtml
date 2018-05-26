@@ -1,10 +1,12 @@
-﻿@{
-    ViewBag.Title = "Home Page";
-}
+﻿<body onload="Check()">
 
-<body>
+    @{
+        ViewBag.Title = "Home Page";
+    }
 
-    <form action="/Home/LogIn" method="post" onload="NameCheck() && ColorCheck() && FoodCheck()">
+
+
+    <form action="/Home/LogIn" method="post">
         <br />
 
         <fieldset class="form-group">
@@ -24,29 +26,50 @@
         <input id="submit" type="submit" onclick="return true;" value="Submit Registration!" /><br />
 
     </form>
+
+    @*<script>
+            function NameCheck() {
+                //if (Session["UserName"] !== null) {
+                var x = Session["UserName"];
+                    document.getElementById("name").value = /*Session["UserName"]*/x;
+
+                //}
+            }
+        </script>
+        <script>
+            function ColorCheck() {
+                //if (Session["Color"] !== null) {
+                var x = Session["Color"];
+                    document.getElementById("colorChosen").value = /*Session["Color"]*/x;
+
+                //}
+            }
+        </script>
+        <script>
+            function FoodCheck() {
+                //if (Session["FavoriteFood"] !== null) {
+                var x = Session["FavoriteFood"];
+                    document.getElementById("fave").value = /*Session["FavoriteFood"]*/x;
+
+                //}
+            }
+        </script>*@
+    <script>
+        @*if (@Session["UserName"] != null) {
+            var a = @Session["UserName"];
+            var b = @Session["Color"];
+            var c = @Session["FavoriteFood"];*@
+            function Check() {
+                document.getElementById("name").value = "@Session["UserName"]";
+                document.getElementById("colorChosen").value = "@Session["Color"]";
+                document.getElementById("fave").value = "@Session["FavoriteFood"]";
+            //}
+        }
+    </script>
 </body>
-
-<script>
-    function NameCheck() {
-        if (Session["UserName"] !== null) {
-            document.getElementById("name").value = Session["UserName"];
-
-        }
+<style>
+    body{
+        background-color: @Session["Color"];
+        color: white;
     }
-</script>
-<script>
-    function ColorCheck() {
-        if (Session["Color"] !== null) {
-            document.getElementById("colorChosen").value = Session["Color"];
-
-        }
-    }
-</script>
-<script>
-    function FoodCheck() {
-        if (Session["FavoriteFood"] !== null) {
-            document.getElementById("fave").value = Session["FavoriteFood"];
-
-        }
-    }
-</script>
+</style>
